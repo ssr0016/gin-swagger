@@ -3,6 +3,7 @@ package main
 import (
 	"gin-swagger/config"
 	"gin-swagger/controller"
+	_ "gin-swagger/docs"
 	"gin-swagger/helper"
 	"gin-swagger/model"
 	"gin-swagger/repository"
@@ -14,6 +15,12 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+// @title Tag Service API
+// @version 1.0
+// @description A Tag service API in Go using Gin framework
+
+// @host localhost:8080
+// @BasePath /api
 func main() {
 
 	log.Info().Msg("Starting server!")

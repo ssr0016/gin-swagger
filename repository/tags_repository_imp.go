@@ -19,7 +19,7 @@ func NewTagsRepositoryImpl(Db *gorm.DB) TagsRepository {
 
 func (t *TagsRepositoryImpl) Delete(tagsId int) {
 	var tags model.Tags
-	result := t.Db.Where("Id = ?", tagsId).Delete(&tags)
+	result := t.Db.Where("id = ?", tagsId).Delete(&tags)
 	helper.ErrPanic(result.Error)
 }
 

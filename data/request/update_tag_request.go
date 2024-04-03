@@ -1,6 +1,6 @@
 package request
 
 type UpdateTagRequest struct {
-	Id   int    `validate:"required" json:"id"`
-	Name string `validate:"required, max=200,min=1" json:"name"`
+	Id   int    `validate:"required"`
+	Name string `validate:"required,max=200,min=1" json:"name"`
 }

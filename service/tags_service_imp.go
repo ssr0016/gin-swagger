@@ -12,18 +12,18 @@ import (
 
 type TagsServiceImpl struct {
 	TagsRepository repository.TagsRepository
-	validate       *validator.Validate
+	Validate       *validator.Validate
 }
 
 func NewTagsServiceImpl(TagsRepository repository.TagsRepository, validate *validator.Validate) TagsService {
 	return &TagsServiceImpl{
 		TagsRepository: TagsRepository,
-		validate:       validate,
+		Validate:       validate,
 	}
 }
 
 func (t *TagsServiceImpl) Create(tags request.CreateTagsRequest) {
-	err := t.validate.Struct(tags)
+	err := t.Validate.Struct(tags)
 	helper.ErrPanic(err)
 
 	tagModel := model.Tags{
